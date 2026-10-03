@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rayyan Aljamal · Full-Stack Developer & Website Builder</title>
+<meta name="description" content="Rayyan Aljamal · Full-Stack Developer & Website Builder based in Irbid, Jordan. I build websites that build your business.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="https://avatars.githubusercontent.com/u/227048575?v=4">
+<style>
+:root{
+  --ink:#070b12; --ink2:#0b111d; --panel:rgba(255,255,255,.04);
+  --line:rgba(255,255,255,.09); --txt:#eef3f1; --mut:#9db3ab;
+  --em:#10b981; --teal:#14b8a6; --grad:linear-gradient(120deg,#10b981,#14b8a6 55%,#22d3ee);
+  --r:20px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--txt);font-family:'Sora',system-ui,-apple-system,'Segoe UI',sans-serif;line-height:1.6;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-2;background:
+  radial-gradient(700px 420px at 85% -5%,rgba(16,185,129,.16),transparent 60%),
+  radial-gradient(600px 380px at -10% 30%,rgba(20,184,166,.12),transparent 60%),
+  radial-gradient(800px 500px at 50% 110%,rgba(34,211,238,.07),transparent 60%),var(--ink)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border:1px solid var(--line);border-radius:999px;font-size:12px;color:var(--mut);background:rgba(255,255,255,.03)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:14px;font-weight:700;font-size:15px;border:1px solid transparent;cursor:pointer;transition:.25s;font-family:inherit}
+.btn-p{background:var(--grad);color:#04120c;box-shadow:0 12px 32px -10px rgba(16,185,129,.55)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 18px 40px -10px rgba(16,185,129,.65)}
+.btn-g{background:rgba(255,255,255,.05);color:var(--txt);border-color:var(--line);backdrop-filter:blur(8px)}
+.btn-g:hover{border-color:rgba(16,185,129,.5);transform:translateY(-2px)}
+section{padding:84px 0}
+.sec-head{max-width:640px;margin-bottom:42px}
+.sec-head h2{font-size:clamp(28px,4.5vw,40px);font-weight:800;letter-spacing:-.02em;margin:12px 0 10px}
+.sec-head p{color:var(--mut);font-size:16px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--em)}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- nav ---------- */
+nav{position:sticky;top:0;z-index:60;background:rgba(7,11,18,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:16px}
+.brand img{width:36px;height:36px;border-radius:50%;border:2px solid rgba(16,185,129,.6)}
+.nav-links{display:flex;gap:26px;font-size:14px;color:var(--mut)}
+.nav-links a:hover{color:var(--txt)}
+.nav-cta{padding:9px 18px;font-size:13px;border-radius:11px}
+@media(max-width:720px){.nav-links{display:none}}
+
+/* ---------- hero ---------- */
+.hero{padding:64px 0 30px;text-align:center}
+.hero .pill{display:inline-flex;gap:8px;align-items:center;padding:7px 16px;border-radius:999px;border:1px solid rgba(16,185,129,.35);background:rgba(16,185,129,.08);font-size:13px;color:#a7f3d0}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--em);box-shadow:0 0 0 0 rgba(16,185,129,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(16,185,129,0)}100%{box-shadow:0 0 0 0 rgba(16,185,129,0)}}
+.hero h1{font-size:clamp(38px,7vw,68px);font-weight:800;letter-spacing:-.03em;line-height:1.08;margin:22px auto 14px;max-width:820px}
+.hero .sub{color:var(--mut);font-size:clamp(16px,2.4vw,19px);max-width:620px;margin:0 auto}
+.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+
+/* ---------- 3D flip card ---------- */
+.card-stage{perspective:1600px;margin:52px auto 8px;width:min(560px,94vw)}
+.bcard{position:relative;width:100%;aspect-ratio:1.586/1;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.2,.7,.25,1);cursor:pointer;will-change:transform}
+.bcard.flipped{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;border-radius:24px;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden;border:1px solid rgba(255,255,255,.14);box-shadow:0 40px 80px -30px rgba(0,0,0,.8),0 0 0 1px rgba(16,185,129,.06)}
+.face::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.09) 48%,transparent 62%);pointer-events:none}
+.front{background:linear-gradient(135deg,#0a1522 0%,#08131f 45%,#06231c 100%);padding:clamp(20px,4.5vw,34px);display:flex;flex-direction:column;justify-content:space-between;text-align:left}
+.front .glow{position:absolute;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(16,185,129,.35),transparent 65%);top:-140px;right:-90px;pointer-events:none}
+.f-top{display:flex;align-items:center;gap:16px;position:relative}
+.f-top img{width:clamp(58px,11vw,76px);height:clamp(58px,11vw,76px);border-radius:50%;border:3px solid rgba(16,185,129,.7);object-fit:cover}
+.f-name{font-size:clamp(22px,4.6vw,31px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.f-role{font-size:clamp(12px,2.4vw,14.5px);color:#6ee7b7;font-weight:600;margin-top:3px}
+.f-loc{font-size:12.5px;color:var(--mut);margin-top:2px}
+.f-chips{display:flex;flex-wrap:wrap;gap:8px;position:relative}
+.f-chip{display:inline-flex;align-items:center;gap:7px;font-size:12px;padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid var(--line);color:#d7e6e0}
+.f-brand{position:absolute;top:clamp(20px,4.5vw,34px);right:clamp(20px,4.5vw,34px);font-weight:800;font-size:15px;opacity:.9}
+.f-brand span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.back{transform:rotateY(180deg);background:linear-gradient(150deg,#06231c,#0a1522 60%,#070b12);padding:clamp(20px,4.5vw,34px);text-align:left;display:flex;flex-direction:column;justify-content:space-between}
+.back h3{font-size:clamp(17px,3.4vw,21px);font-weight:800;margin-bottom:10px}
+.back ul{list-style:none;display:grid;gap:7px;font-size:clamp(12.5px,2.5vw,14.5px);color:#cfe6dd}
+.back li::before{content:"▸ ";color:var(--em);font-weight:800}
+.back .tag{font-size:clamp(13px,2.8vw,16px);font-weight:700}
+.back .b-links{display:flex;gap:8px;flex-wrap:wrap}
+.flip-hint{margin-top:16px;font-size:13px;color:var(--mut)}
+.flip-hint b{color:var(--em)}
+
+/* ---------- about ---------- */
+.about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:stretch}
+@media(max-width:860px){.about-grid{grid-template-columns:1fr}}
+.glass{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:30px;backdrop-filter:blur(10px)}
+.about-grid p{color:var(--mut);font-size:16px;margin-bottom:14px}
+.about-grid p b{color:var(--txt)}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px;text-align:center}
+.stat .n{font-size:30px;font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .l{font-size:12.5px;color:var(--mut);margin-top:2px}
+
+/* ---------- services ---------- */
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:1020px){.svc-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.svc-grid{grid-template-columns:1fr}}
+.svc{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:26px;transition:.3s;position:relative;overflow:hidden}
+.svc:hover{transform:translateY(-5px);border-color:rgba(16,185,129,.45)}
+.svc .ic{width:48px;height:48px;border-radius:14px;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.3);display:grid;place-items:center;font-size:22px;margin-bottom:16px}
+.svc h3{font-size:17px;font-weight:700;margin-bottom:8px}
+.svc p{font-size:14px;color:var(--mut);margin-bottom:16px}
+.svc a{font-size:13.5px;font-weight:700;color:var(--em)}
+.svc a:hover{text-decoration:underline}
+
+/* ---------- portfolio ---------- */
+.pf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:1020px){.pf-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.pf-grid{grid-template-columns:1fr}}
+.pf{background:#0a101c;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:.3s;display:flex;flex-direction:column}
+.pf:hover{transform:translateY(-5px);border-color:rgba(16,185,129,.45);box-shadow:0 24px 48px -22px rgba(0,0,0,.75)}
+.pf-shot{position:relative;aspect-ratio:16/9.4;overflow:hidden;background:linear-gradient(135deg,#0d2b21,#0a1522 60%,#123)}
+.pf-shot .fb{position:absolute;inset:0;display:grid;place-items:center;font-size:52px;font-weight:800;color:rgba(255,255,255,.16);letter-spacing:-.02em}
+.pf-shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top}
+.pf-body{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.pf-body h3{font-size:17px;font-weight:700}
+.pf-body p{font-size:13.5px;color:var(--mut);flex:1}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.pf-actions{display:flex;gap:8px;margin-top:6px}
+.pf-actions a{flex:1;text-align:center;padding:10px;border-radius:11px;font-size:13.5px;font-weight:700;border:1px solid var(--line);transition:.25s}
+.pf-actions a.live{background:var(--grad);color:#04120c;border:none}
+.pf-actions a:hover{transform:translateY(-2px)}
+.flagship{outline:1px solid rgba(16,185,129,.4)}
+
+/* ---------- promo teaser ---------- */
+.promo{background:linear-gradient(120deg,rgba(16,185,129,.14),rgba(20,184,166,.06));border:1px solid rgba(16,185,129,.3);border-radius:26px;padding:clamp(26px,5vw,46px);display:flex;gap:26px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.promo h3{font-size:clamp(21px,3.4vw,28px);font-weight:800;margin-bottom:8px}
+.promo p{color:var(--mut);max-width:520px;font-size:15px}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);padding:70px 0 40px;text-align:center}
+footer h2{font-size:clamp(28px,5vw,42px);font-weight:800;letter-spacing:-.02em;margin-bottom:12px}
+footer .fp{color:var(--mut);max-width:520px;margin:0 auto 28px}
+.socials{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+.socials a{padding:10px 18px;border:1px solid var(--line);border-radius:999px;font-size:13.5px;font-weight:600;background:rgba(255,255,255,.03);transition:.25s}
+.socials a:hover{border-color:rgba(16,185,129,.55);color:#6ee7b7;transform:translateY(-2px)}
+.copy{margin-top:44px;font-size:12.5px;color:#5f7a70}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-in">
+    <a class="brand" href="#top"><img src="https://avatars.githubusercontent.com/u/227048575?v=4" alt="Rayyan Aljamal">Rayyan<span class="grad-text">Aljamal</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a><a href="#services">Services</a><a href="#work">Work</a><a href="print-cards.html">Business Cards</a><a href="#contact">Contact</a>
+    </div>
+    <a class="btn btn-p nav-cta" href="mailto:rayanaljamal550@gmail.com">Hire Me</a>
+  </div>
+</nav>
+
+<header class="hero wrap" id="top">
+  <span class="pill"><span class="dot"></span> Available for new projects · Irbid, Jordan</span>
+  <h1>I build websites that <span class="grad-text">build your business.</span></h1>
+  <p class="sub">I am Rayyan Aljamal, a full-stack developer crafting fast, modern websites and web apps for businesses, communities, and founders.</p>
+  <div class="hero-actions">
+    <button class="btn btn-p" id="saveContact" type="button">⭳ Save My Contact</button>
+    <a class="btn btn-g" href="#work">View My Work</a>
+    <a class="btn btn-g" href="mailto:rayanaljamal550@gmail.com">✉ Hire Me</a>
+  </div>
+
+  <div class="card-stage">
+    <div class="bcard" id="bcard" title="Click to flip">
+      <div class="face front">
+        <div class="glow"></div>
+        <div class="f-brand">R<span>A</span></div>
+        <div class="f-top">
+          <img src="https://avatars.githubusercontent.com/u/227048575?v=4" alt="Rayyan Aljamal">
+          <div>
+            <div class="f-name">Rayyan Aljamal</div>
+            <div class="f-role">Full-Stack Developer &amp; Website Builder</div>
+            <div class="f-loc">📍 Irbid, Jordan · Working worldwide</div>
+          </div>
+        </div>
+        <div class="f-chips">
+          <span class="f-chip">✉ rayanaljamal550@gmail.com</span>
+          <span class="f-chip">🐙 github.com/rayanhhhgfy-cyber</span>
+          <span class="f-chip">🌐 f-thinkers.vercel.app</span>
+        </div>
+      </div>
+      <div class="face back">
+        <div>
+          <h3>What I can build for you</h3>
+          <ul>
+            <li>Business websites that win customers</li>
+            <li>Web apps, dashboards &amp; admin panels</li>
+            <li>Online stores &amp; point-of-sale systems</li>
+            <li>Landing pages &amp; personal portfolios</li>
+          </ul>
+        </div>
+        <div>
+          <p class="tag grad-text">I build websites that build your business.</p>
+          <div class="b-links" style="margin-top:12px">
+            <span class="f-chip">GitHub</span><span class="f-chip">LinkedIn</span><span class="f-chip">Instagram</span><span class="f-chip">X</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="flip-hint">Move your mouse over the card · <b>click it to flip</b></p>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">About</span>
+      <h2>A developer who ships <span class="grad-text">real products</span></h2>
+    </div>
+    <div class="about-grid">
+      <div class="glass reveal">
+        <p>I am <b>Rayyan Aljamal</b>, a full-stack developer from <b>Irbid, Jordan</b>. I design and build complete web products: from the first sketch to a fast, secure, live website your customers can actually use.</p>
+        <p>My flagship project is the <b>Future Thinkers platform</b> (نادي مفكري المستقبل): a full education platform with a book library and PDF reader, chess, coding challenges, live competitions, certificates, and an admin control center, used by hundreds of students across schools.</p>
+        <p>Beyond that I have built point-of-sale systems, e-commerce experiences, productivity tools, and community platforms. One partner, one point of contact, and a product built to grow with your business.</p>
+      </div>
+      <div class="stats reveal">
+        <div class="stat"><div class="n">9+</div><div class="l">Live products shipped</div></div>
+        <div class="stat"><div class="n">25+</div><div class="l">Public code repositories</div></div>
+        <div class="stat"><div class="n">100s</div><div class="l">Students on my platform</div></div>
+        <div class="stat"><div class="n">24/7</div><div class="l">Sites monitored &amp; supported</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Services</span>
+      <h2>What I can build <span class="grad-text">for you</span></h2>
+      <p>Clear scope, honest pricing, and a website that keeps working for you long after launch day.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc reveal"><div class="ic">🏢</div><h3>Business Websites</h3><p>A professional home for your company: services, story, and contact flows that turn visitors into customers.</p><a href="mailto:rayanaljamal550@gmail.com?subject=Business%20Website">Start a project →</a></div>
+      <div class="svc reveal"><div class="ic">📊</div><h3>Web Apps &amp; Dashboards</h3><p>Custom platforms with accounts, admin panels, payments-ready structure, and real-time features.</p><a href="mailto:rayanaljamal550@gmail.com?subject=Web%20App">Start a project →</a></div>
+      <div class="svc reveal"><div class="ic">🛒</div><h3>E-Commerce &amp; POS</h3><p>Online stores and point-of-sale systems that keep your products, sales, and reports in one place.</p><a href="mailto:rayanaljamal550@gmail.com?subject=E-Commerce%20%2F%20POS">Start a project →</a></div>
+      <div class="svc reveal"><div class="ic">🚀</div><h3>Landing Pages &amp; Portfolios</h3><p>Fast, beautiful one-pagers that launch your product, campaign, or personal brand in days, not months.</p><a href="mailto:rayanaljamal550@gmail.com?subject=Landing%20Page">Start a project →</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="work" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Showroom</span>
+      <h2>Selected <span class="grad-text">work</span></h2>
+      <p>Real, live products. Open any of them and try it yourself.</p>
+    </div>
+    <div class="pf-grid" id="pfGrid"></div>
+  </div>
+</section>
+
+<section style="padding-top:10px">
+  <div class="wrap">
+    <div class="promo reveal">
+      <div>
+        <h3>Take my card with you 📇</h3>
+        <p>Three print-ready promotional business card designs: dark executive, light minimal, and gradient bold. Print them, hand them out, and let your next website start with a conversation.</p>
+      </div>
+      <a class="btn btn-p" href="print-cards.html">View &amp; Print Cards</a>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <span class="eyebrow">Contact</span>
+    <h2>Let us build <span class="grad-text">your website</span></h2>
+    <p class="fp">Tell me about your project and I will reply with honest advice, a clear plan, and a fair price. No pressure, no jargon.</p>
+    <a class="btn btn-p" href="mailto:rayanaljamal550@gmail.com">✉ rayanaljamal550@gmail.com</a>
+    <div class="socials">
+      <a href="https://github.com/rayanhhhgfy-cyber" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/rayan-aljamal-2087963a8/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.instagram.com/ra.v25/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://x.com/AljamalRay48287" target="_blank" rel="noopener">X (Twitter)</a>
+      <a href="https://f-thinkers.vercel.app" target="_blank" rel="noopener">Future Thinkers</a>
+    </div>
+    <p class="copy">© 2026 Rayyan Aljamal · Irbid, Jordan · Built with care, coffee, and clean code.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* ---------- portfolio data ---------- */
+  var projects=[
+    {t:"Future Thinkers Platform",u:"https://f-thinkers.vercel.app",c:"https://github.com/rayanhhhgfy-cyber/future-thinkers",tags:["React","FastAPI","MongoDB"],d:"Flagship education platform: book library with PDF reader, chess, coding challenges, live competitions, and certificates for hundreds of students.",f:1},
+    {t:"Gathering Hub",u:"https://gatheringhub.vercel.app",c:"https://github.com/rayanhhhgfy-cyber/gatheringhub",tags:["React","Next.js","MongoDB"],d:"A community gathering platform for organizing people, events, and shared spaces."},
+    {t:"Konoz Bag",u:"https://konoz-bag.vercel.app",c:"https://github.com/rayanhhhgfy-cyber/konoz-bag",tags:["Next.js","PostgreSQL","Prisma"],d:"A polished shopping experience for bags, built on a modern full-stack foundation."},
+    {t:"Quran Recitations",u:"https://quran-recitings.vercel.app",c:"https://github.com/rayanhhhgfy-cyber/quran-recitings",tags:["Next.js","TypeScript","Audio API"],d:"Listen to beautiful Quran recitations with a clean, focused audio experience."},
+    {t:"UN Lab",u:"https://un-lab.vercel.app",c:"https://github.com/rayanhhhgfy-cyber/un-lab",tags:["React","D3.js","Node.js"],d:"Interactive data experiences and simulations presented with rich visualizations."},
+    {t:"POS Rayyan",u:"https://pos-rayyan.vercel.app",c:"",tags:["Next.js","TypeScript","PostgreSQL"],d:"A point-of-sale system for shops: sales, products, and daily reports in one place."},
+    {t:"Resume Creator",u:"https://resume-creator2.vercel.app",c:"",tags:["Next.js","TypeScript","PDF"],d:"Create a professional resume in minutes and export it as a polished PDF."},
+    {t:"IQ Test",u:"https://IQ-test121.vercel.app",c:"",tags:["Next.js","TypeScript","Quiz"],d:"A timed IQ test with instant scoring and a shareable result experience."},
+    {t:"Noda Website Building",u:"https://noda-websitebuilding.vercel.app",c:"",tags:["Next.js","TypeScript"],d:"My website-building business: see packages and start your own project."}
+  ];
+  var grid=document.getElementById('pfGrid');
+  projects.forEach(function(p){
+    var shot='https://s0.wp.com/mshots/v1/'+encodeURIComponent(p.u)+'?w=900';
+    var tags=p.tags.map(function(x){return '<span class="chip">'+x+'</span>'}).join('');
+    var code=p.c?'<a href="'+p.c+'" target="_blank" rel="noopener">Code</a>':'';
+    var el=document.createElement('article');
+    el.className='pf reveal'+(p.f?' flagship':'');
+    el.innerHTML='<div class="pf-shot"><div class="fb">'+p.t.split(' ').map(function(w){return w[0]}).slice(0,2).join('')+'</div><img loading="lazy" alt="'+p.t+' screenshot" src="'+shot+'" onerror="this.remove()"></div>'+
+      '<div class="pf-body"><h3>'+p.t+(p.f?' <span class="chip" style="color:#6ee7b7;border-color:rgba(16,185,129,.4)">Flagship</span>':'')+'</h3><p>'+p.d+'</p><div class="tags">'+tags+'</div>'+
+      '<div class="pf-actions"><a class="live" href="'+p.u+'" target="_blank" rel="noopener">Visit Live</a>'+code+'</div></div>';
+    grid.appendChild(el);
+  });
+
+  /* ---------- reveal on scroll ---------- */
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+
+  /* ---------- 3D tilt + flip card ---------- */
+  var card=document.getElementById('bcard'), stage=card.parentElement, flipped=false, rx=0, ry=0;
+  function render(){ card.style.transform=(flipped?'rotateY(180deg) ':'')+'rotateX('+rx+'deg) rotateY('+ry+'deg)'; }
+  stage.addEventListener('mousemove',function(e){
+    var r=stage.getBoundingClientRect(), x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+    rx=(-y*10).toFixed(2); ry=(x*14+(flipped?180:0)).toFixed(2);
+    card.style.transition='transform .12s ease-out';
+    card.style.transform='rotateX('+rx+'deg) rotateY('+ry+'deg)';
+  });
+  stage.addEventListener('mouseleave',function(){ card.style.transition='transform .8s cubic-bezier(.2,.7,.25,1)'; render(); });
+  card.addEventListener('click',function(){ flipped=!flipped; card.style.transition='transform .8s cubic-bezier(.2,.7,.25,1)'; render(); });
+
+  /* ---------- save contact (vCard) ---------- */
+  document.getElementById('saveContact').addEventListener('click',function(){
+    var v=['BEGIN:VCARD','VERSION:3.0','FN:Rayyan Aljamal','N:Aljamal;Rayyan;;;',
+      'TITLE:Full-Stack Developer & Website Builder',
+      'EMAIL;TYPE=INTERNET:rayanaljamal550@gmail.com',
+      'URL:https://github.com/rayanhhhgfy-cyber',
+      'URL:https://f-thinkers.vercel.app',
+      'URL:https://www.linkedin.com/in/rayan-aljamal-2087963a8/',
+      'ADR:;;;Irbid;;;Jordan',
+      'NOTE:I build websites that build your business. Business websites, web apps, e-commerce & POS, landing pages.',
+      'END:VCARD'].join('\r\n');
+    var a=document.createElement('a');
+    a.href=URL.createObjectURL(new Blob([v],{type:'text/vcard'}));
+    a.download='Rayyan-Aljamal.vcf'; document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function(){URL.revokeObjectURL(a.href)},2000);
+  });
+})();
+</script>
+</body>
+</html>

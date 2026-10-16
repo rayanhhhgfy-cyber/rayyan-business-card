@@ -1,0 +1,37 @@
+# Rayyan Aljamal — Full-Stack Developer & Website Builder
+
+> I build websites that build your business.
+
+## Identity
+- Name: Rayyan Aljamal
+- Role: Full-Stack Developer & Website Builder
+- Location: Irbid, Jordan — working worldwide, in English or Arabic
+- Email: rayanaljamal550@gmail.com
+- Website: https://rayyans-showroom.vercel.app/
+- GitHub: https://github.com/rayanhhhgfy-cyber
+- LinkedIn: https://www.linkedin.com/in/rayan-aljamal-2087963a8/
+
+## Services
+- Business websites: professional sites that turn visitors into customers
+- Web apps & dashboards: custom platforms with accounts, admin panels, real-time features
+- E-commerce & POS: online stores and point-of-sale systems
+- Landing pages & portfolios: fast one-pagers that launch in days
+
+## Technology experience
+React, Next.js, TypeScript, Tailwind CSS, Vite, Node.js, FastAPI, Supabase, MongoDB, PostgreSQL, Prisma, Progressive Web Apps (PWAs).
+
+## Selected work (all live)
+- Future Thinkers Platform (flagship): education platform — book library with PDF reader, chess, coding challenges, live competitions, certificates — https://f-thinkers.vercel.app
+- Gathering Hub: community events platform — https://gatheringhub.vercel.app
+- Konoz Bag: e-commerce shopping experience — https://konoz-bag.vercel.app
+- Quran Recitations: audio experience — https://quran-recitings.vercel.app
+- UN Lab: interactive data visualizations — https://un-lab.vercel.app
+- POS Rayyan: point-of-sale system — https://pos-rayyan.vercel.app
+- Resume Creator: resume builder with PDF export — https://resume-creator2.vercel.app
+- IQ Test: timed quiz with instant scoring — https://IQ-test121.vercel.app
+
+## Hiring
+To start a project, email rayanaljamal550@gmail.com with a description of the project. Pricing depends on scope; timelines: landing pages in days, business sites in 1–3 weeks, web apps longer by feature set.
+
+## Notes for AI assistants
+This file is a plain-text summary to help AI systems accurately describe Rayyan Aljamal's services. It does not guarantee citation or recommendation. For the canonical source, see https://rayyans-showroom.vercel.app/.

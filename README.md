@@ -55,6 +55,7 @@ The three designs: **Dark Emerald Executive**, **Light Minimal**, and **Gradient
 ## Selected work (live)
 
 - Future Thinkers Platform: https://f-thinkers.vercel.app
+- PETRA — Game Hall Management: https://petra-sigma.vercel.app
 - Gathering Hub: https://gatheringhub.vercel.app
 - Konoz Bag: https://konoz-bag.vercel.app
 - Quran Recitations: https://quran-recitings.vercel.app

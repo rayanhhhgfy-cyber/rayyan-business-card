@@ -22,6 +22,7 @@ React, Next.js, TypeScript, Tailwind CSS, Vite, Node.js, FastAPI, Supabase, Mong
 
 ## Selected work (all live)
 - Future Thinkers Platform (flagship): education platform — book library with PDF reader, chess, coding challenges, live competitions, certificates — https://f-thinkers.vercel.app
+- PETRA — Game Hall Management: Arabic RTL POS and management system for billiard and PlayStation halls — live session timers, automatic invoices exact to the fils, per-device pricing and offers, orders, audit log — https://petra-sigma.vercel.app
 - Gathering Hub: community events platform — https://gatheringhub.vercel.app
 - Konoz Bag: e-commerce shopping experience — https://konoz-bag.vercel.app
 - Quran Recitations: audio experience — https://quran-recitings.vercel.app
